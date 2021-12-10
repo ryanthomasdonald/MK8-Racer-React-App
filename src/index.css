@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+  background-image: url("img/mk-bg-square-tile-75.png");
+  background-color: #000000;
+  background-attachment: fixed;
+  background-repeat: repeat
+}

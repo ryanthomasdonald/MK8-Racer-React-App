@@ -1,0 +1,7 @@
+export const UPDATE_DRIVER = "UPDATE_DRIVER"
+export const UPDATE_KART = "UPDATE_KART"
+export const UPDATE_TIRE = "UPDATE_TIRE"
+export const UPDATE_GLIDER = "UPDATE_GLIDER"
+export const LOAD_INIT = "LOAD_INIT"
+export const ADD_TO_CART = "ADD_TO_CART"
+export const DELETE_BUILD = "DELETE_BUILD"
