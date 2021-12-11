@@ -1,0 +1,7 @@
+@media screen and (min-width:577px){
+    img.headerLogo {height: 60px;};
+}
+
+@media (min-width:0px) and (max-width:576px){
+    img.headerLogo {height: 40px;};
+}

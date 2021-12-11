@@ -1,0 +1,20 @@
+@media screen and (min-width:769px){
+    img.logo {width: 750px;};
+}
+@media screen and (min-width:769px){
+    img.star {width: 175px;};
+}
+
+@media (min-width:0px) and (max-width:768px){
+    img.logo {width: 80%;};
+}
+@media (min-width:577px) and (max-width:768px){
+    img.star {width: 140px};
+}
+
+@media (min-width:0px) and (max-width:576px){
+    img.star {width: 105px};
+}
+
+img.logo {height: auto;}
+img.star {height: auto;}

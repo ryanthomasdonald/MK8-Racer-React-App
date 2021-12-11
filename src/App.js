@@ -8,7 +8,7 @@ function App() {
     <div className="row mx-0">
       <div className="col d-flex py-5 mt-3 mb-4 justify-content-center">
         <Fade top duration={1650}>
-          <img src="img/home-page-with-graph.png" width="750px" alt="mario cart chart"/>
+          <img className="logo" src="img/home-page-with-graph.png" alt="mario cart chart"/>
         </Fade>
       </div>
     </div>
@@ -16,7 +16,7 @@ function App() {
     <div className="d-flex justify-content-center">
       <Fade duration={1650}>
         <Link to="/builder" title="Let's GO!">
-          <img src="img/star-spinning.gif" width="175px" alt="star"/>
+          <img className="star" src="img/star-spinning.gif" alt="spinning star"/>
         </Link>
       </Fade>
     </div>
