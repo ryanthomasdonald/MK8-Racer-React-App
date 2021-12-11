@@ -5,6 +5,7 @@ import Fade from "react-reveal"
 import Button from "react-bootstrap/Button"
 // import Badge from "react-bootstrap/Badge"
 import {Chart} from "react-chartjs-2"
+import "./Builder.css"
 
 const Cart = () => {
     const [showExpand, setShowExpand] = useState(false)
@@ -68,14 +69,16 @@ const Cart = () => {
                     <>
                     <div className="row text-center mb-3 justify-content-center">
                     {(!showExpand || expandID !== combo.id) && <>
-                        <span className="col-lg-6 col-sm-12 px-0 d-flex justify-content-lg-end justify-content-sm-center">
-                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img key={combo.driver.id} src={`img/items/${combo.driver.img}`} /></Button>
-                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img key={combo.kart.id} src={`img/items/${combo.kart.img}`} /></Button>
-                        </span>
-                        <span className="col-lg-6 col-sm-12 px-0 d-flex justify-content-lg-start justify-content-sm-center">
-                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img key={combo.tire.id} src={`img/items/${combo.tire.img}`} /></Button>
-                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img key={combo.glider.id} src={`img/items/${combo.glider.img}`} /></Button>
-                        </span>
+                        <div className="col mb-2 justify-content-center">
+                        {/* <span className="col-lg-6 col-sm-12 px-0 d-flex justify-content-lg-end justify-content-sm-center"> */}
+                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img className="responsiveItem" key={combo.driver.id} src={`img/items/${combo.driver.img}`} /></Button>
+                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img className="responsiveItem" key={combo.kart.id} src={`img/items/${combo.kart.img}`} /></Button>
+                        {/* </span> */}
+                        {/* <span className="col-lg-6 col-sm-12 px-0 d-flex justify-content-lg-start justify-content-sm-center"> */}
+                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img className="responsiveItem" key={combo.tire.id} src={`img/items/${combo.tire.img}`} /></Button>
+                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img className="responsiveItem" key={combo.glider.id} src={`img/items/${combo.glider.img}`} /></Button>
+                        {/* </span> */}
+                        </div>
                         <Fade>
                             <div>
                                 <Button className="btn button-green text-white m-1 mb-4" onClick={(e) => handleExpandBuild(e, combo.id)}><img width="155px" src="/img/expand-button.png" /></Button>
@@ -85,10 +88,10 @@ const Cart = () => {
                     </>}
                     {showExpand && expandID === combo.id && <>
                         <div className="col mb-2 justify-content-center">
-                            <Button className="btn button-blue m-1" onClick={handleDriverSpecs}><img key={combo.driver.id} height="128px" src={`img/items/${combo.driver.img}`} /></Button>
-                            <Button className="btn button-green m-1" onClick={handleKartSpecs}><img key={combo.kart.id} src={`img/items/${combo.kart.img}`} /></Button>
-                            <Button className="btn button-yellow m-1" onClick={handleTireSpecs}><img key={combo.tire.id} src={`img/items/${combo.tire.img}`} /></Button>
-                            <Button className="btn button-red m-1" onClick={handleGliderSpecs}><img key={combo.glider.id} src={`img/items/${combo.glider.img}`} /></Button>
+                            <Button className="btn button-blue m-1" onClick={handleDriverSpecs}><img className="responsiveItem" key={combo.driver.id} src={`img/items/${combo.driver.img}`} /></Button>
+                            <Button className="btn button-green m-1" onClick={handleKartSpecs}><img className="responsiveItem" key={combo.kart.id} src={`img/items/${combo.kart.img}`} /></Button>
+                            <Button className="btn button-yellow m-1" onClick={handleTireSpecs}><img className="responsiveItem" key={combo.tire.id} src={`img/items/${combo.tire.img}`} /></Button>
+                            <Button className="btn button-red m-1" onClick={handleGliderSpecs}><img className="responsiveItem" key={combo.glider.id} src={`img/items/${combo.glider.img}`} /></Button>
                         </div>
                         <Fade>
                             <div className="text-white">

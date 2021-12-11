@@ -77,3 +77,13 @@
     border-color: #333333;
     box-shadow: 0 0 0 .2rem rgba(0, 70, 240, 0.4)
 }
+
+@media screen and (max-width:576px){
+    img.responsiveItem {width: 150px;}
+}
+
+@media screen and (min-width:577px){
+    img.responsiveItem {width: 200px;}
+}
+
+img.responsivItem {height: auto;}
