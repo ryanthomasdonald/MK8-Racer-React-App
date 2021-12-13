@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import {useSelector, useDispatch} from "react-redux"
 import {deleteBuild} from "../actions/builderActions"
 import Fade from "react-reveal"
 import Button from "react-bootstrap/Button"
-// import Badge from "react-bootstrap/Badge"
 import {Chart} from "react-chartjs-2"
 import "./Builder.css"
 
@@ -16,11 +15,6 @@ const Cart = () => {
     const [showGliderSpecs, setShowGliderSpecs] = useState(true)
     const combos = useSelector(state => state.builderReducer.comboArr)
     const dispatch = useDispatch()
-    // useEffect(() => {          // example of syntax if needed
-    //     return () => {
-    //         cleanup
-    //     }
-    // }, [])
     const reversedCombos = combos.map(item => item).reverse();
     const handleExpandBuild = (e, id) => {
         e.preventDefault()
@@ -57,8 +51,8 @@ const Cart = () => {
     <>
     <Fade top>
         <div className="container">
-            <div className="row mx-0 pt-2 pb-5 justify-content-center">
-                <img style={{width: "625px"}} src="img/kart-cart.png" />
+            <div className="row mx-0 pt-2 pb-4 justify-content-center">
+                <img style={{width: "625px"}} src="img/kart-cart.png" alt="cart cart" />
             </div>
         </div>
     </Fade>
@@ -67,31 +61,27 @@ const Cart = () => {
             {reversedCombos.map(combo => {
                 return (
                     <>
-                    <div className="row text-center mb-3 justify-content-center">
+                    <div key={combo.id} className="row text-center mb-3 justify-content-center">
                     {(!showExpand || expandID !== combo.id) && <>
-                        <div className="col mb-2 justify-content-center">
-                        {/* <span className="col-lg-6 col-sm-12 px-0 d-flex justify-content-lg-end justify-content-sm-center"> */}
-                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img className="responsiveItem" key={combo.driver.id} src={`img/items/${combo.driver.img}`} /></Button>
-                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img className="responsiveItem" key={combo.kart.id} src={`img/items/${combo.kart.img}`} /></Button>
-                        {/* </span> */}
-                        {/* <span className="col-lg-6 col-sm-12 px-0 d-flex justify-content-lg-start justify-content-sm-center"> */}
-                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img className="responsiveItem" key={combo.tire.id} src={`img/items/${combo.tire.img}`} /></Button>
-                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img className="responsiveItem" key={combo.glider.id} src={`img/items/${combo.glider.img}`} /></Button>
-                        {/* </span> */}
+                        <div className="col mb-2 mt-3 justify-content-center">
+                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img className="responsiveItem" key={combo.driver.id} src={`img/items/${combo.driver.img}`} alt="driver" /></Button>
+                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img className="responsiveItem" key={combo.kart.id} src={`img/items/${combo.kart.img}`} alt="body" /></Button>
+                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img className="responsiveItem" key={combo.tire.id} src={`img/items/${combo.tire.img}`} alt="tire" /></Button>
+                            <Button className="btn button-gray m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img className="responsiveItem" key={combo.glider.id} src={`img/items/${combo.glider.img}`} alt="glider" /></Button>
                         </div>
                         <Fade>
                             <div>
-                                <Button className="btn button-green text-white m-1 mb-4" onClick={(e) => handleExpandBuild(e, combo.id)}><img width="155px" src="/img/expand-button.png" /></Button>
-                                <Button className="btn button-red m-1 mb-4" onClick={() => dispatch(deleteBuild(combo.id))}><img width="150px" src="/img/delete-button.png" /></Button>
+                                <Button className="btn button-green text-white m-1" onClick={(e) => handleExpandBuild(e, combo.id)}><img width="155px" src="/img/expand-button.png" alt="expand button" /></Button>
+                                <Button className="btn button-red m-1" onClick={() => dispatch(deleteBuild(combo.id))}><img width="150px" src="/img/delete-button.png" alt="delete button" /></Button>
                             </div>
                         </Fade>
                     </>}
                     {showExpand && expandID === combo.id && <>
-                        <div className="col mb-2 justify-content-center">
-                            <Button className="btn button-blue m-1" onClick={handleDriverSpecs}><img className="responsiveItem" key={combo.driver.id} src={`img/items/${combo.driver.img}`} /></Button>
-                            <Button className="btn button-green m-1" onClick={handleKartSpecs}><img className="responsiveItem" key={combo.kart.id} src={`img/items/${combo.kart.img}`} /></Button>
-                            <Button className="btn button-yellow m-1" onClick={handleTireSpecs}><img className="responsiveItem" key={combo.tire.id} src={`img/items/${combo.tire.img}`} /></Button>
-                            <Button className="btn button-red m-1" onClick={handleGliderSpecs}><img className="responsiveItem" key={combo.glider.id} src={`img/items/${combo.glider.img}`} /></Button>
+                        <div className="col mb-2 mt-3 justify-content-center">
+                            <Button className="btn button-blue m-1" onClick={handleDriverSpecs}><img className="responsiveItem" key={combo.driver.id} src={`img/items/${combo.driver.img}`} alt="driver" /></Button>
+                            <Button className="btn button-green m-1" onClick={handleKartSpecs}><img className="responsiveItem" key={combo.kart.id} src={`img/items/${combo.kart.img}`} alt="body" /></Button>
+                            <Button className="btn button-yellow m-1" onClick={handleTireSpecs}><img className="responsiveItem" key={combo.tire.id} src={`img/items/${combo.tire.img}`} alt="tire" /></Button>
+                            <Button className="btn button-red m-1" onClick={handleGliderSpecs}><img className="responsiveItem" key={combo.glider.id} src={`img/items/${combo.glider.img}`} alt="glider" /></Button>
                         </div>
                         <Fade>
                             <div className="text-white">
@@ -172,17 +162,7 @@ const Cart = () => {
                                                     padding: 30
                                                 }
                                             },
-                                            // tooltip: {
-                                            //     position: "average",
-                                            //     xAlign: "right",
-                                            //     yAlign: "bottom"
-                                            // }
                                         },
-                                        // elements: {
-                                        //     bar: {
-                                        //         borderRadius: 7.5
-                                        //     }
-                                        // },
                                         scales: {
                                             x: {
                                                 stacked: true,
@@ -202,8 +182,8 @@ const Cart = () => {
                             </Fade>
                         </div>
                         <div>
-                        <Button className="btn button-yellow text-white m-1" onClick={(e) => handleShrinkBuild(e)}><img width="145px" src="/img/shrink-button.png" /></Button>
-                            <Button className="btn button-red m-1" onClick={() => dispatch(deleteBuild(combo.id))}><img width="150px" src="/img/delete-button.png" /></Button>
+                            <Button className="btn button-yellow text-white m-1" onClick={(e) => handleShrinkBuild(e)}><img width="145px" src="/img/shrink-button.png" alt="shrink button" /></Button>
+                            <Button className="btn button-red m-1" onClick={() => dispatch(deleteBuild(combo.id))}><img width="150px" src="/img/delete-button.png" alt="delete button" /></Button>
                         </div>
                         </>}
                     </div>

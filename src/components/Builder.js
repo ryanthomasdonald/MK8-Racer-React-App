@@ -22,6 +22,7 @@ const Builder = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(loadInit())
+        // eslint-disable-next-line
     }, [])
     const karts = MKData.filter(item => item.type === "kart")
     const drivers = MKData.filter(item => item.type === "driver")
@@ -34,7 +35,7 @@ const Builder = () => {
             <Fade top>
                 <div className="container">
                     <div className="row pt-2 pb-2 mx-0 justify-content-center">
-                        <img style={{width: "750px"}} src="img/build-a-kart.png" />
+                        <img style={{width: "750px"}} src="img/build-a-kart.png" alt="build a cart" />
                     </div>
                 </div>
                 <div className="container">
@@ -42,7 +43,7 @@ const Builder = () => {
                         <div className="col col-lg col-md-6 d-flex justify-content-center">
                             <Form className="text-center pt-4">
                                 <div>
-                                    <img src={`img/items/${driverState.img}`} />
+                                    <img src={`img/items/${driverState.img}`} alt="driver" />
                                 </div>
                                 <div>
                                     <Form.Select className="bg-dark mt-1 text-center text-white" name="drivers" id="drivers" value={formDriver} onChange={(e) => setFormDriver(e.target.value)}>
@@ -50,14 +51,14 @@ const Builder = () => {
                                             return <option key={driver.id} value={driver.id}>{driver.name}</option>
                                         })}
                                     </Form.Select>
-                                    <Button className="btn button-blue mt-2 text-white" type="button" value="submit" onClick={() => dispatch(updateDriver(parseInt(formDriver)))}><img width="150px" src="/img/update-button.png" /></Button>
+                                    <Button className="btn button-blue mt-2 text-white" type="button" value="submit" onClick={() => dispatch(updateDriver(parseInt(formDriver)))}><img width="150px" src="/img/update-button.png" alt="update button" /></Button>
                                 </div>
                             </Form>
                         </div>
                         <div className="col d-flex justify-content-center">
                             <Form className="text-center pt-4">
                                 <div>
-                                    <img src={`img/items/${kartState.img}`} />
+                                    <img src={`img/items/${kartState.img}`} alt="body" />
                                 </div>
                                 <div>
                                     <Form.Select className="bg-dark mt-1 text-center text-white" name="karts" id="karts" value={formKart} onChange={(e) => setFormKart(e.target.value)}>
@@ -65,14 +66,14 @@ const Builder = () => {
                                             return <option key={kart.id} value={kart.id}>{kart.name}</option>
                                         })}
                                     </Form.Select>
-                                    <Button className="btn button-green mt-2 text-white" type="button" value="submit" onClick={() => dispatch(updateKart(parseInt(formKart)))}><img width="150px" src="/img/update-button.png" /></Button>
+                                    <Button className="btn button-green mt-2 text-white" type="button" value="submit" onClick={() => dispatch(updateKart(parseInt(formKart)))}><img width="150px" src="/img/update-button.png" alt="update button" /></Button>
                                 </div>
                             </Form>
                         </div>
                         <div className="col d-flex justify-content-center">
                             <Form className="text-center pt-4">
                                 <div>
-                                    <img src={`img/items/${tireState.img}`} />
+                                    <img src={`img/items/${tireState.img}`} alt="tire" />
                                 </div>
                                 <div>
                                     <Form.Select className="bg-dark mt-1 text-center text-white" name="tires" id="tires" value={formTire} onChange={(e) => setFormTire(e.target.value)}>
@@ -80,14 +81,14 @@ const Builder = () => {
                                             return <option key={tire.id} value={tire.id}>{tire.name}</option>
                                         })}
                                     </Form.Select>
-                                    <Button className="btn button-yellow mt-2 text-white" type="button" value="submit" onClick={() => dispatch(updateTire(parseInt(formTire)))}><img width="150px" src="/img/update-button.png" /></Button>
+                                    <Button className="btn button-yellow mt-2 text-white" type="button" value="submit" onClick={() => dispatch(updateTire(parseInt(formTire)))}><img width="150px" src="/img/update-button.png" alt="update button" /></Button>
                                 </div>
                             </Form>
                         </div>
                         <div className="col d-flex justify-content-center">
                             <Form className="text-center pt-4">
                                 <div>
-                                    <img src={`img/items/${gliderState.img}`} />
+                                    <img src={`img/items/${gliderState.img}`} alt="glider" />
                                 </div>
                                 <div>
                                     <Form.Select className="bg-dark mt-1 text-center text-white" name="gliders" id="gliders" value={formGlider} onChange={(e) => setFormGlider(e.target.value)}>
@@ -95,14 +96,14 @@ const Builder = () => {
                                             return <option key={glider.id} value={glider.id}>{glider.name}</option>
                                         })}
                                     </Form.Select>
-                                    <Button className="btn button-red mt-2 text-white" type="button" value="submit" onClick={() => dispatch(updateGlider(parseInt(formGlider)))}><img width="150px" src="/img/update-button.png" /></Button>
+                                    <Button className="btn button-red mt-2 text-white" type="button" value="submit" onClick={() => dispatch(updateGlider(parseInt(formGlider)))}><img width="150px" src="/img/update-button.png" alt="update button" /></Button>
                                 </div>
                             </Form>
                         </div>
                     </div>
                     <div className="col d-flex pt-4 justify-content-center">
                         <Link to="/cart">
-                            <Button className="btn button-gray mt-3 mb-3" type="button" value="submit" onClick={() => dispatch(addToCart(formDriver, formKart, formTire, formGlider))}><img className="kartButton" src="/img/add-to-kart.png" /></Button>
+                            <Button className="btn button-gray mt-3 mb-3" type="button" value="submit" onClick={() => dispatch(addToCart(formDriver, formKart, formTire, formGlider))}><img className="kartButton" src="/img/add-to-kart.png" alt="add to cart" /></Button>
                         </Link>
                     </div>
                 </div>
@@ -112,7 +113,7 @@ const Builder = () => {
             <Fade>
                 <div className="container">
                     <div className="row mx-0 pt-5 pb-4 justify-content-center">
-                        <img style={{width: "700px"}} src="img/kart-chart.png" />
+                        <img style={{width: "700px"}} src="img/kart-chart.png" alt="cart chart" />
                     </div>
                 </div>
                 <Chart

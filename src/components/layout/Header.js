@@ -13,7 +13,7 @@ const Header = () => {
         </Navbar.Brand>
         <Navbar.Toggle className="me-4" aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav >
+            <Nav>
                 <ul className="navbar-nav ms-3 col-6">
                     <li className="nav-item">
                         <Link className="nav-link text-white" to="/"><b>HOME</b></Link>
@@ -27,17 +27,6 @@ const Header = () => {
                 </ul>
             </Nav>
         </Navbar.Collapse>
-        {/* <ul className="navbar-nav col-6">
-                <li className="nav-item">
-                    <Link className="nav-link text-white ms-3" to="/"><b>HOME</b></Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link text-white" to="/builder"><b>BUILDER</b></Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link text-white" to="/cart"><b>CART</b></Link>
-                </li>
-            </ul> */}
     </Navbar>
     </>
     )
