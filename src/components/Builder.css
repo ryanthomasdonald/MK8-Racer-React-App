@@ -78,12 +78,24 @@
     box-shadow: 0 0 0 .2rem rgba(0, 70, 240, 0.4)
 }
 
-@media screen and (max-width:576px){
-    img.responsiveItem {width: 150px;}
+@media screen and (min-width:577px){
+    img.kartButton {width: 450px;}
+}
+
+@media (min-width:0px) and (max-width:576px){
+    img.kartButton {width: 300px;}
 }
 
 @media screen and (min-width:577px){
     img.responsiveItem {width: 200px;}
+}
+
+@media (min-width:385px) and (max-width:576px){
+    img.responsiveItem {width: 150px;}
+}
+
+@media (min-width:0px) and (max-width:384px){
+    img.responsiveItem {width: 125px;}
 }
 
 img.responsiveItem {height: auto;}

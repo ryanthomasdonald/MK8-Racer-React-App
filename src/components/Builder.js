@@ -102,7 +102,7 @@ const Builder = () => {
                     </div>
                     <div className="col d-flex pt-4 justify-content-center">
                         <Link to="/cart">
-                            <Button className="btn button-gray mt-3 mb-3" type="button" value="submit" onClick={() => dispatch(addToCart(formDriver, formKart, formTire, formGlider))}><img width="450px" src="/img/add-to-kart.png" /></Button>
+                            <Button className="btn button-gray mt-3 mb-3" type="button" value="submit" onClick={() => dispatch(addToCart(formDriver, formKart, formTire, formGlider))}><img className="kartButton" src="/img/add-to-kart.png" /></Button>
                         </Link>
                     </div>
                 </div>
